@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppBaseDeDatos</string>
+
+    <string name="nombres">Nombres</string>
+    <string name="telefono">Teléfono</string>
+    <string name="guardar">Guardar</string>
+
+</resources>
