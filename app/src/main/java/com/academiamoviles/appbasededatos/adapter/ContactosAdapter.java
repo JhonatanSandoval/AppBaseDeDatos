@@ -24,25 +24,12 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.Cont
 
     @Override
     public void onBindViewHolder(ContactoHolder holder, int position) {
-        final ContactoModel itemLista = listaContactos.get(position);
+        holder.pintar(position);
+    }
 
-        holder.tvNombres.setText(itemLista.getNombre());
-        holder.tvTelefono.setText(itemLista.getTelefono());
-
-        holder.ivEditar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        holder.ivBorrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
+    public void setListaContactos(List<ContactoModel> listaContactos) {
+        this.listaContactos = listaContactos;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -63,6 +50,28 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.Cont
 
             ivEditar = itemView.findViewById(R.id.ivEditar);
             ivBorrar = itemView.findViewById(R.id.ivBorrar);
+
+        }
+
+        public void pintar(int position) {
+            ContactoModel itemLista = listaContactos.get(position);
+
+            tvNombres.setText(itemLista.getNombre());
+            tvTelefono.setText(itemLista.getTelefono());
+
+            ivEditar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+            ivBorrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
         }
 

@@ -4,6 +4,6 @@ import android.view.View;
 
 public interface RVClickListener {
 
-    void onItemClick(View view, Object object);
+    void onItemClick(View view, int objectId);
 
 }
